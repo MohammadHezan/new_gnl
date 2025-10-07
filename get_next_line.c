@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaizan <mhaizan@student.42amman.com>      +#+  +:+       +#+        */
+/*   By: mohammad_hezan <mohammad_hezan@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 13:50:36 by mhaizan           #+#    #+#             */
-/*   Updated: 2025/10/07 20:03:06 by mhaizan          ###   ########.fr       */
+/*   Updated: 2025/10/08 01:08:06 by mohammad_he      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 static char	*extract_line(char **line)
 {
-	char	*extracted_line;
+	char	*extracted;
 	char	*temp;
 	size_t	i;
 
 	if (!*line || **line == '\0')
 	{
-		if (*line)
-			free(*line);
+		free(*line);
 		*line = NULL;
 		return (NULL);
 	}
@@ -30,13 +29,13 @@ static char	*extract_line(char **line)
 		i++;
 	if ((*line)[i] == '\n')
 		i++;
-	extracted_line = ft_substr(*line, 0, i);
-	if (!extracted_line)
+	extracted = ft_substr(*line, 0, i);
+	if (!extracted)
 		return (NULL);
 	temp = ft_strdup(*line + i);
 	free(*line);
 	*line = temp;
-	return (extracted_line);
+	return (extracted);
 }
 
 static int	read_to_buf(int fd, char **line)
@@ -80,19 +79,11 @@ char	*get_next_line(int fd)
 		line = NULL;
 		return (NULL);
 	}
+	if (n == 0 && (!line || *line == '\0'))
+	{
+		free(line);
+		line = NULL;
+		return (NULL);
+	}
 	return (extract_line(&line));
 }
-/* #include <stdio.h>
-int	main(void)
-{
-	char	*l;
-
-	int fd=open("tst.txt", O_RDONLY);
-	while((l = get_next_line(fd)))
-	{
-		printf("%s\n", l);
-		free(l);
-	}
-	close(fd);
-}
- */

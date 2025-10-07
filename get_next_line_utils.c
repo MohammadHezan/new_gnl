@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaizan <mhaizan@student.42amman.com>      +#+  +:+       +#+        */
+/*   By: mohammad_hezan <mohammad_hezan@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 13:50:27 by mhaizan           #+#    #+#             */
-/*   Updated: 2025/10/07 20:05:16 by mhaizan          ###   ########.fr       */
+/*   Updated: 2025/10/08 00:59:53 by mohammad_he      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ char	*ft_strdup(const char *s)
 	char	*dup;
 	size_t	i;
 
-	if (!s)
+	if (*s == '\0')
 		return (NULL);
-	dup = NULL;//(char *)malloc(ft_strlen(s) + 1);
+	dup = (char *)malloc(ft_strlen(s) + 1);
 	if (!dup)
 		return (NULL);
 	i = 0;

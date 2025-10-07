@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mhaizan <mhaizan@student.42amman.com>      +#+  +:+       +#+        */
+/*   By: mohammad_hezan <mohammad_hezan@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 13:50:19 by mhaizan           #+#    #+#             */
-/*   Updated: 2025/10/06 20:47:10 by mhaizan          ###   ########.fr       */
+/*   Updated: 2025/10/08 01:04:15 by mohammad_he      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
-# endif
-
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1094
 # endif
 
 char	*get_next_line(int fd);
