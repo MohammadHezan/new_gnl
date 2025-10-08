@@ -6,7 +6,7 @@
 /*   By: mohammad_hezan <mohammad_hezan@student.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/04 13:50:19 by mhaizan           #+#    #+#             */
-/*   Updated: 2025/10/08 01:04:15 by mohammad_he      ###   ########.fr       */
+/*   Updated: 2025/10/08 13:00:33 by mohammad_he      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
-# include <limits.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
